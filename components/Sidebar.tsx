@@ -25,6 +25,12 @@ function Sidebar() {
           <NewChat />
           <div>{/* Algorithm Selection */}</div>
 
+          {loading && (
+            <div className="animate-pulse text-center text-white">
+              <p>Loading chat history</p>
+            </div>
+          )}
+
           {/* Chat history */}
           {chats?.docs.map((chat) => (
             <ChatRow key={chat.id} id={chat.id} />
