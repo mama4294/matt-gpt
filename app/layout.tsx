@@ -4,6 +4,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "../pages/api/auth/[...nextauth]";
 import "../styles/globals.css";
 import Login from "../components/Login";
+import ClientProvider from "../components/ClientProvider";
 
 export default async function RootLayout({
   children,
@@ -26,6 +27,7 @@ export default async function RootLayout({
                 <Sidebar />
               </div>
               {/* Client Provider */}
+              <ClientProvider />
 
               {/* Content */}
               <div className="bg-[#343541] flex-1">{children}</div>
