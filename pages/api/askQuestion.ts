@@ -36,11 +36,6 @@ export default async function handler(
     },
   };
 
-  console.log("--- Ask Question Component ---");
-  console.log("request", req.body);
-  console.log("response", response);
-  console.log("message", message);
-
   await adminDb
     .collection("users")
     .doc(session.user.email)
