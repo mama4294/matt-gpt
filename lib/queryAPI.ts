@@ -3,9 +3,6 @@ import openai from "./chatgpt";
 //could use chatId to allow for contextual answers based on previous responses
 
 const query = async (prompt: string, chatId: string, model: string) => {
-  console.log("--- OpenAI Query Function ---");
-  console.log("Open AI Congig", openai);
-  console.log("querying", prompt);
   const res = await openai
     .createCompletion({
       model,
@@ -21,7 +18,6 @@ const query = async (prompt: string, chatId: string, model: string) => {
       (err) =>
         `MattGPT was unable to find an answer to that due to: ${err.Message}`
     );
-  console.log("response", res);
   return res;
 };
 

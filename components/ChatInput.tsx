@@ -67,7 +67,6 @@ function ChatInput({ chatId }: { chatId: string }) {
     })
       .then(() => {
         //successs message
-        console.log("MattGPT has responded!");
         toast.success("MattGPT has responded!", {
           id: notification,
         });
