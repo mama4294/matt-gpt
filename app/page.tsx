@@ -21,9 +21,7 @@ function HomePage() {
             <p className="infoText">
               What is the difference between their and there?
             </p>
-            <p className="infoText">
-              Why is Matthew Malone such a cool person?
-            </p>
+            <p className="infoText">Why is Matthew Malone such a cool guy?</p>
           </div>
         </div>
         <div>
@@ -53,7 +51,7 @@ function HomePage() {
               May occasionally generate incorrect information
             </p>
             <p className="infoText">
-              May occasionally produce harmful instructions or biased content
+              Cannot read your significant other's mind
             </p>
             <p className="infoText">
               Limited knowledge of world and events after 2021

@@ -84,7 +84,7 @@ function ChatInput({ chatId }: { chatId: string }) {
           className="focus:outline-none bg-transparent flex-1 disabled:cursor-not-allowed disabled:text-gray-300"
           type="text"
           disabled={!session}
-          placeholder="type your message"
+          placeholder="Type your message"
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
