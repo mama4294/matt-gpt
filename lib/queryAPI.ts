@@ -3,6 +3,12 @@ import openai from "./chatgpt";
 //could use chatId to allow for contextual answers based on previous responses
 
 const query = async (prompt: string, chatId: string, model: string) => {
+  console.log("---querying API---");
+  console.log("openai: ", openai);
+  console.log("prompt: ", prompt);
+  console.log("chatId: ", chatId);
+  console.log("model: ", model);
+
   const res = await openai
     .createCompletion({
       model,
