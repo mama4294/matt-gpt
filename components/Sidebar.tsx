@@ -38,12 +38,17 @@ function Sidebar() {
         </div>
       </div>
       {session && (
-        <img
-          src={session.user?.image!}
+        <div
           onClick={() => signOut()}
-          alt="Profile Picture"
-          className="rounded-full h-12 w-12 cursor-auto mx-auto mb-2 hover:opacity-50"
-        />
+          className={`chatRow flex justify-start mb-2`}
+        >
+          <img
+            src={session.user?.image!}
+            alt="Profile Picture"
+            className="rounded-full h-12 w-12 cursor-auto "
+          />
+          <p>Logout</p>
+        </div>
       )}
     </div>
   );
