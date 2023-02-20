@@ -18,7 +18,7 @@ function Login() {
         height={300}
       /> */}
       <h1 className="font-bold text-4xl mb-2">MattGPT</h1>
-      <p className="text-lg mb-10">
+      <p className="text-lg mb-10 px-4">
         A natural language processing tool driven by AI technology{" "}
       </p>
       <button

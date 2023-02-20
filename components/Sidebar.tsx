@@ -18,7 +18,7 @@ function Sidebar() {
   );
 
   return (
-    <div className="flex flex-col p-2 h-screen">
+    <div className="flex flex-col p-2 min-h-screen">
       <div className="flex-1">
         <div>
           {/* New Chat Button */}
@@ -40,7 +40,7 @@ function Sidebar() {
       {session && (
         <div
           onClick={() => signOut()}
-          className={`chatRow flex justify-start mb-2`}
+          className={`chatRow flex-col justify-start mb-2 md:flex-row`}
         >
           <img
             src={session.user?.image!}
