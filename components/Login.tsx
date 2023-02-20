@@ -11,10 +11,8 @@ function Login() {
   const [loading, setLoading] = useState(false);
 
   const login = () => {
+    signIn("google");
     setLoading(true);
-    signIn("google").then((res) => {
-      setLoading(false);
-    });
   };
   return (
     <div className="bg-gradient-to-r from-[#11A37F] to-[#0A614C] h-screen flex flex-col items-center justify-center text-center text-white">

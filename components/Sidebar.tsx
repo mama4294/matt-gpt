@@ -6,6 +6,7 @@ import { useCollection } from "react-firebase-hooks/firestore";
 import { db } from "../firebase";
 import { collection, orderBy, query } from "firebase/firestore";
 import ChatRow from "./ChatRow";
+import Loading from "./Loading";
 
 function Sidebar() {
   const { data: session } = useSession();
@@ -26,7 +27,8 @@ function Sidebar() {
           <div>{/* Algorithm Selection */}</div>
 
           {loading && (
-            <div className="animate-pulse text-center text-white">
+            <div className="animate-pulse text-center text-white mt-2">
+              <Loading />
               <p>Loading chat history</p>
             </div>
           )}
