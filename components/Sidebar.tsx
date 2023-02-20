@@ -7,6 +7,7 @@ import { db } from "../firebase";
 import { collection, orderBy, query } from "firebase/firestore";
 import ChatRow from "./ChatRow";
 import Loading from "./Loading";
+import { useState } from "react";
 
 function Sidebar() {
   const { data: session } = useSession();
@@ -17,6 +18,13 @@ function Sidebar() {
         orderBy("createdAt", "desc")
       )
   );
+
+  const [signoutLoading, setSignoutLoading] = useState(false);
+
+  const Signout = () => {
+    signOut();
+    setSignoutLoading(true);
+  };
 
   return (
     <div className="flex flex-col p-2 min-h-screen">
@@ -41,7 +49,7 @@ function Sidebar() {
       </div>
       {session && (
         <div
-          onClick={() => signOut()}
+          onClick={Signout}
           className={`chatRow flex-col justify-start mb-2 md:flex-row`}
         >
           <img
@@ -49,7 +57,7 @@ function Sidebar() {
             alt="Profile Picture"
             className="rounded-full h-12 w-12 cursor-auto "
           />
-          <p>Logout</p>
+          {signoutLoading ? <Loading /> : <p>Logout</p>}
         </div>
       )}
     </div>
