@@ -1,12 +1,21 @@
 "use client";
 
+import { ArrowPathIcon } from "@heroicons/react/24/solid";
 import { signIn } from "next-auth/react";
-import Image from "next/image";
-import headshot from "../public/Headshot.jpg";
+import { useState } from "react";
+import Loading from "./Loading";
 
 // whitelist localhost:3000 and domain name at https://console.cloud.google.com/apis/credentials?project=mattgpt-498f2
 
 function Login() {
+  const [loading, setLoading] = useState(false);
+
+  const login = () => {
+    setLoading(true);
+    signIn("google").then((res) => {
+      setLoading(false);
+    });
+  };
   return (
     <div className="bg-gradient-to-r from-[#11A37F] to-[#0A614C] h-screen flex flex-col items-center justify-center text-center text-white">
       {/* <Image
@@ -23,9 +32,10 @@ function Login() {
       </p>
       <button
         className="text-2xl border border-white rounded-full p-4 hover:bg-white hover:text-[#11A37F]"
-        onClick={() => signIn("google")}
+        onClick={login}
+        disabled={loading}
       >
-        Sign in
+        {loading ? <Loading /> : "Sign in"}
       </button>
     </div>
   );
