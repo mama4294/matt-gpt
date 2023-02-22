@@ -27,30 +27,31 @@ function Sidebar() {
   };
 
   return (
-    <div className="flex flex-col p-2 min-h-screen">
-      <div className="flex-1">
-        <div>
-          {/* New Chat Button */}
-          <NewChat />
-          <div>{/* Algorithm Selection */}</div>
+    <div className="h-full flex flex-col">
+      {/* New Chat Button */}
+      <NewChat />
 
-          {loading && (
-            <div className="animate-pulse text-center text-white mt-2">
-              <Loading />
-              <p>Loading chat history</p>
-            </div>
-          )}
+      {loading && (
+        <div className="animate-pulse text-center text-white mt-2">
+          <Loading />
+          <p>Loading chat history</p>
+        </div>
+      )}
 
-          {/* Chat history */}
+      {/* Chat history */}
+      <div className="overflow-y-auto border-b border-white/20 flex-1">
+        <div className="flex flex-col gap-2 text-gray-100 text-sm">
           {chats?.docs.map((chat) => (
             <ChatRow key={chat.id} id={chat.id} />
           ))}
         </div>
       </div>
+
+      {/* Logout Button */}
       {session && (
         <div
           onClick={Signout}
-          className={`chatRow flex-col justify-start mb-2 md:flex-row`}
+          className={`chatRow justify-start mb-2 text-xs m-0`}
         >
           <img
             src={session.user?.image!}
