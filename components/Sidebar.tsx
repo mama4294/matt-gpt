@@ -8,6 +8,7 @@ import { collection, orderBy, query } from "firebase/firestore";
 import ChatRow from "./ChatRow";
 import Loading from "./Loading";
 import { useState } from "react";
+import { PlusIcon } from "@heroicons/react/24/solid";
 
 function Sidebar() {
   const { data: session } = useSession();
@@ -29,7 +30,12 @@ function Sidebar() {
   return (
     <div className="h-full flex flex-col">
       {/* New Chat Button */}
-      <NewChat />
+      <NewChat>
+        <div className="border-gray-700 border chatRow m-2">
+          <PlusIcon className="h-4 w-4" />
+          <p>New Chat</p>
+        </div>
+      </NewChat>
 
       {loading && (
         <div className="animate-pulse text-center text-white mt-2">

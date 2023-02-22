@@ -3,6 +3,7 @@
 import { Bars3Icon, PlusIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
 import Drawer from "./Drawer";
+import NewChat from "./NewChat";
 import Sidebar from "./Sidebar";
 
 function MobileMenu() {
@@ -14,9 +15,11 @@ function MobileMenu() {
           <Bars3Icon className="w-8 h-8 m-2" />
         </button>
         <p>MattGPT</p>
-        <button className="btn">
-          <PlusIcon className="w-8 h-8 m-2" />
-        </button>
+        <NewChat>
+          <button className="btn">
+            <PlusIcon className="w-8 h-8 m-2" />
+          </button>
+        </NewChat>
       </div>
       <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
         <div className="bg-[#202123] h-full">
