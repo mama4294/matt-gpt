@@ -14,7 +14,6 @@ function MobileMenu() {
           <Bars3Icon className="w-8 h-8 m-2" />
         </button>
         <p>MattGPT</p>
-        <div></div>
         <button className="btn">
           <PlusIcon className="w-8 h-8 m-2" />
         </button>

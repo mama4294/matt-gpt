@@ -11,6 +11,6 @@
   }
 
   .btn {
-    @apply text-gray-300 rounded-lg p-1 m-1 text-sm hover:bg-gray-700/70 transition-all duration-200 ease-out;
+    @apply text-gray-300 rounded-lg p-1 text-sm hover:bg-gray-700/70 transition-all duration-200 ease-out;
   }
 }

@@ -19,27 +19,28 @@ export default function Drawer({ children, isOpen, setIsOpen }: Props) {
     >
       <div
         className={
-          " w-screen left-0 absolute h-full shadow-xl delay-400 duration-500 ease-in-out transition-all transform " +
+          "left-0 absolute h-full shadow-xl delay-400 duration-500 ease-in-out transition-all transform " +
           (isOpen ? " translate-x-0 " : "-translate-x-[100%] ")
         }
       >
-        {/* CLose button */}
-        <div className="absolute top-0 right-0">
-          <button
-            className="btn w-fit bg-[#202123]"
-            onClick={() => setIsOpen(false)}
-          >
-            <XMarkIcon className="w-8 h-8 text-white m-2" />
-          </button>
-        </div>
-
-        {/* Content of Drawer */}
         <div className="relative w-screen max-w-xs h-full bg-[#202123] ">
+          {/* CLose button */}
+          <div className="absolute top-0 right-0 -mr-14">
+            <button
+              className="btn w-fit bg-[#202123] border border-white/20 rounded-lg"
+              onClick={() => setIsOpen(false)}
+            >
+              <XMarkIcon className="w-8 h-8 text-white m-2" />
+            </button>
+          </div>
+
+          {/* Content of Drawer */}
           {children}
         </div>
       </div>
+      {/* Outside area to click and close drawer */}
       <section
-        className=" w-screen h-full cursor-pointer "
+        className=" w-screen h-full cursor-pointer"
         onClick={() => {
           setIsOpen(false);
         }}
