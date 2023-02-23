@@ -6,8 +6,8 @@ import {
 
 function HomePage() {
   return (
-    <div className="h-screen overflow-hidden">
-      <div className="text-white flex flex-col items-center md:justify-center h-screen px-2 overflow-y-auto overflow-x-hidden">
+    <div className="h-full overflow-hidden">
+      <div className="text-white flex flex-col items-center md:justify-center h-full px-2 overflow-y-auto overflow-x-hidden">
         <h1 className="text-5xl font-bold my-20">MattGPT</h1>
         <div className="flex flex-col space-x-2 text-center md:flex-row">
           <div className="mb-8">

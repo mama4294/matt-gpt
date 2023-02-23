@@ -17,25 +17,24 @@ export default async function RootLayout({
   return (
     <html>
       <head />
-      <body>
+      <body className="h-screen flex flex-col">
         <SessionProvider session={session}>
           {!session ? (
             <Login />
           ) : (
             <>
+              {/* Mobile Menu */}
               <div className="bg-[#202123] md:hidden">
                 <MobileMenu />
               </div>
-              <div className="flex">
-                {/* Mobile Menu */}
 
+              <div className="flex flex-1">
                 {/* Sidebar */}
                 <div className="bg-[#202123] max-w-xs h-screen md:min-w-[20rem] hidden md:block">
                   <Sidebar />
                 </div>
                 {/* Client Provider */}
                 <ClientProvider />
-
                 {/* Content */}
                 <div className="bg-[#343541] flex-1">{children}</div>
               </div>
