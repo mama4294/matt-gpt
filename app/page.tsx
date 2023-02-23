@@ -15,7 +15,7 @@ function HomePage() {
           <NewChat>
             <div className="border-gray-500 border chatRow m-2">
               <PlusIcon className="h-4 w-4" />
-              <p>Start Conversation</p>
+              <p>Start a Conversation</p>
             </div>
           </NewChat>
         </div>
