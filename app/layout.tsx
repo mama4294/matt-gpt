@@ -28,12 +28,12 @@ export default async function RootLayout({
                 <MobileMenu />
               </div>
 
-              <div className="flex flex-1">
+              <div className="flex flex-1 h-full">
                 {/* Sidebar */}
                 <div className="bg-[#202123] max-w-xs h-screen md:min-w-[20rem] hidden md:block">
                   <Sidebar />
                 </div>
-                {/* Client Provider */}
+                {/* Client Provider for Toast Messages */}
                 <ClientProvider />
                 {/* Content */}
                 <div className="bg-[#343541] flex-1">{children}</div>
