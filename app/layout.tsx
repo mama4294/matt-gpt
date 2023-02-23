@@ -21,6 +21,7 @@ export default async function RootLayout({
       <body className="h-screen flex flex-col">
         <SessionProvider session={session}>
           <MenuProvider>
+            {/* For opening and closing mobile menu */}
             {!session ? (
               <Login />
             ) : (
