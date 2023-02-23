@@ -28,7 +28,7 @@ export default async function RootLayout({
                 <MobileMenu />
               </div>
 
-              <div className="flex flex-1 h-full">
+              <div className="flex flex-1 h-[300px]">
                 {/* Sidebar */}
                 <div className="bg-[#202123] max-w-xs h-screen md:min-w-[20rem] hidden md:block">
                   <Sidebar />
