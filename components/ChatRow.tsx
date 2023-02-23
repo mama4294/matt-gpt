@@ -1,10 +1,10 @@
 import { ChatBubbleLeftIcon, TrashIcon } from "@heroicons/react/24/outline";
 import { collection, deleteDoc, doc } from "firebase/firestore";
 import { useSession } from "next-auth/react";
-import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useCollection } from "react-firebase-hooks/firestore";
+import { useMenuContext } from "../context/MobileMenu";
 import { db } from "../firebase";
 
 function ChatRow({ id }: { id: string }) {
@@ -12,6 +12,7 @@ function ChatRow({ id }: { id: string }) {
   const router = useRouter();
   const { data: session } = useSession();
   const [active, setActive] = useState(false);
+  const { setMenuOpen } = useMenuContext();
   const [messages] = useCollection(
     collection(db, "users", session?.user?.email!, "chats", id, "messages")
   );
@@ -26,9 +27,14 @@ function ChatRow({ id }: { id: string }) {
     router.replace("/");
   };
 
+  const openPage = () => {
+    setMenuOpen(false);
+    router.push(`/chat/${id}`);
+  };
+
   return (
-    <Link
-      href={`/chat/${id}`}
+    <div
+      onClick={openPage}
       className={`chatRow justify-center ${active && "bg-gray-700/50"}`}
     >
       <ChatBubbleLeftIcon className="h-5 w-5" />
@@ -39,7 +45,7 @@ function ChatRow({ id }: { id: string }) {
         className="h-5 w-5 text-gray-700 hover:text-red-700"
         onClick={removeChat}
       />
-    </Link>
+    </div>
   );
 }
 
